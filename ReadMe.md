@@ -4,7 +4,7 @@ This project is used to generate Kong Gateway specific Custom Resources (CRs) wh
 
 ## Prerequisites
 
-- Go 1.16 or higher
+- Go 1.23 or higher
 - APK configuration files
 
 ## Installation
@@ -12,7 +12,7 @@ This project is used to generate Kong Gateway specific Custom Resources (CRs) wh
 1. Clone the repository:
 
     ```sh
-    git clone https://github.com/yourusername/apk-kong-cr-generator.git
+    git clone https://github.com/terance-edmonds/apk-kong-cr-generator.git
     ```
 
 2. Navigate to the project directory:
