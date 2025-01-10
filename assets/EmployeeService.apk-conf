@@ -1,0 +1,51 @@
+---
+name: "EmployeeServiceAPI"
+basePath: "/employees-info"
+version: "3.14"
+type: "REST"
+defaultVersion: false
+subscriptionValidation: false
+endpointConfigurations:
+  production:
+    endpoint: "http://employee-service:8080"
+rateLimit:
+  requestsPerUnit: 10
+  unit: Minute
+corsConfiguration:
+  corsConfigurationEnabled: true
+  accessControlAllowCredentials: false
+  accessControlAllowMaxAge: 0
+authentication:
+  - authType: APIKey
+    enabled: true
+    headerEnable: true
+
+  - authType: JWT
+    enabled: true
+    headerEnable: true
+
+  - authType: mTLS
+    enabled: true
+    certificates:
+      - key: "client-key"
+
+  - authType: OAuth2
+    enabled: true
+    
+operations:
+- target: "/employees"
+  verb: "GET"
+  secured: true
+  scopes: []
+- target: "/employee"
+  verb: "POST"
+  secured: true
+  scopes: []
+- target: "/employee/{employeeId}"
+  verb: "PUT"
+  secured: true
+  scopes: []
+- target: "/employee/{employeeId}"
+  verb: "DELETE"
+  secured: true
+  scopes: []
